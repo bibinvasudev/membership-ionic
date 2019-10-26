@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-title>Inbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="tab=='CHAT'">
+  <div class="center-justify-flex top-bottom-margins">
+    <div class="center-justify-flex width100pc">
+      <button class="tab-item left" (click)="changeTab('CHAT')" [ngClass]="{'selected': tab=='CHAT'}">
+        Chat
+      </button>
+      <button class="tab-item right" (click)="changeTab('CIRCULARS')" [ngClass]="{'selected': tab=='CIRCULARS'}">
+        Circulars
+      </button>
+    </div>
+  </div>
+
+  <form (ngSubmit)=searchMember() class="message-form">
+    <input class="search-input">
+    <div class="left-margin">
+      <button mat-stroked-button class="search-button">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </form>
+
+  <ion-card *ngFor='let chat of chats' (click)='showChat(chat)'>
+    <ion-card-header>
+      <ion-card-subtitle>District Secretary</ion-card-subtitle>
+      <ion-card-title>Lewis Hamilton</ion-card-title>
+    </ion-card-header>
+    <!-- <ion-card-content>
+      Good job at Russia. Hope you'll make it.
+    </ion-card-content> -->
+  </ion-card>
+</ion-content>
+
+
+<ion-content *ngIf="tab=='CIRCULARS'">
+  <div class="center-justify-flex top-bottom-margins">
+    <div class="center-justify-flex width100pc">
+      <button class="tab-item left" (click)="changeTab('CHAT')" [ngClass]="{'selected': tab=='CHAT'}">
+        Chat
+      </button>
+      <button class="tab-item right" (click)="changeTab('CIRCULARS')" [ngClass]="{'selected': tab=='CIRCULARS'}">
+        Circulars
+      </button>
+    </div>
+  </div>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Circular 1 subtitle</ion-card-subtitle>
+      <ion-card-title>Circular 1 TITLE</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        This is place holder content for circular 1. This can be anything that needs to be sent to every member.
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Circular 2 subtitle</ion-card-subtitle>
+      <ion-card-title>Circular 2 TITLE</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        This is place holder content for circular 1. This can be anything that needs to be sent to every member.
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Circular 3 subtitle</ion-card-subtitle>
+      <ion-card-title>Circular 3 TITLE</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        This is place holder content for circular 1. This can be anything that needs to be sent to every member.
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

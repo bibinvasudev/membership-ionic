@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-title>Add member</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #memberForm="ngForm" (ngSubmit)=submitMemberData()>
+    <ion-list>
+      <ion-item>
+        <div class="add-member-form center-align" (click)='takePhoto()'>
+          <ion-avatar>
+            <img src="https://www.ommel.fi/content/uploads/2019/03/dummy-profile-image-female.jpg">
+          </ion-avatar>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="member.firstName" name="member.firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="member.lastName" name="member.firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>Mobile</ion-label>
+        <ion-input type="number" [(ngModel)]="member.mobile" name="member.mobile"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="member.gender" name="member.gender">
+          <ion-select-option value="female">Female</ion-select-option>
+          <ion-select-option value="male">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Qualification</ion-label>
+        <ion-select placeholder="Select Highest" [(ngModel)]="member.qualification" name="member.qualification">
+          <ion-select-option
+            *ngFor="let qualification of [{id: 1, title: 'sslc'},{id: 2, title: '+2'},{id: 3, title: 'Grad'}]"
+            [value]="qualification.id">{{qualification.title}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date of birth</ion-label>
+        <ion-datetime [(ngModel)]="member.dateOfBirth" name="member.dateOfBirth" displayFormat="DD MM YYYY"
+          placeholder="Select Date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>Job</ion-label>
+        <ion-input type="text" [(ngModel)]="member.job" name="member.job"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="member.email" name="member.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position=floating>Address</ion-label>
+        <ion-input type="text" [(ngModel)]="member.address" name="member.address"></ion-input>
+      </ion-item>
+    </ion-list>
+    <label for="invisible-submit-button" class="stuck-btn">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button class="app-color-variables">
+          <button style="display: none;" id="invisible-submit-button">
+          </button>
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </label>
+  </form>
+</ion-content>

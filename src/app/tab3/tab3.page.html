@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-title>Members Added By Me</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor='let member of membersAddedByMe$ | async' (click)='showProfile(member.id)'>
+    <ion-card-header>
+      <ion-card-title>{{member.name.first + ' ' + member.name.last}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-fab (click)="showAddMemberPage()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="app-color-variables">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

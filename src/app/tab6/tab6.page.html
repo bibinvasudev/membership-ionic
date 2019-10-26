@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-buttons slot="end">
+      <ion-button (click)="showEditPage()">
+        <ion-icon name="create"></ion-icon>
+        Edit
+      </ion-button>
+    </ion-buttons>
+    <ion-title><span class="level-title">{{member.firstName}} </span>{{member.lastName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <profiledetail [member-data]='member' [show-submit-button]=false [allow-edit]=false></profiledetail>
+</ion-content>

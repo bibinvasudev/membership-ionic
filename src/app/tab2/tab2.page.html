@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-title>Committiees</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background: #000;">
+  <ion-card class="welcome-card" *ngFor="let c of committees" (click)='committeeDetail(c.id)'>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <span *ngIf="c.hierarchy[5]">
+            {{c.hierarchy[5]}}
+          </span>
+          <span *ngIf="c.hierarchy[4]">
+            <ion-icon name="arrow-forward"></ion-icon>
+            {{c.hierarchy[4]}}
+          </span>
+          <span *ngIf="c.hierarchy[3]">
+            <ion-icon name="arrow-forward"></ion-icon>
+            {{c.hierarchy[3]}}
+          </span>
+          <span *ngIf="c.hierarchy[2]">
+            <ion-icon name="arrow-forward"></ion-icon>
+            {{c.hierarchy[2]}}
+          </span>
+          <span *ngIf="c.hierarchy[1]">
+            <ion-icon name="arrow-forward"></ion-icon>
+            {{c.hierarchy[1]}}
+        </span>
+      </ion-card-subtitle>
+      <ion-card-title>{{c.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ c.members_count.total }} members
+      <span class="committee-member-count" *ngIf='c.members_count.total'>
+        | {{c.members_count.active}} in committee
+      </span>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab (click)="addCommittee()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="app-color-variables">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

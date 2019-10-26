@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-title>Add Committee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position=floating>Committee Name</ion-label>
+      <ion-input type="text" [(ngModel)]='committee.name'></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>Level</ion-label>
+      <ion-select [(ngModel)]='committee.level'>
+        <ion-select-option *ngFor='let level of levels$ | async' value="{{level.id}}">
+          {{level.title}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item> -->
+    <ion-item>
+      <ion-label position="floating">Search...</ion-label>
+      <ion-input></ion-input>
+      <ion-button class="search" slot="end">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item *ngFor='let member of membersAddedByMe$ | async'>
+      <ion-label>{{member.name.first + ' ' + member.name.last}}</ion-label>
+      <ion-checkbox class="member-checkbox" slot="start"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-fab (click)="addCommittee()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button class="app-color-variables">
+      <ion-icon name="checkmark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

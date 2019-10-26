@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="width80pc" *ngFor='let message of messages'
+    [ngClass]='{left: !isMessageSentByMe(message.sender.id), right: isMessageSentByMe(message.sender.id)}'>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{message.sender.id === 1 ? 'ME' : message.sender.firstName + ' ' + message.sender.lastName | uppercase}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{message.content}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="left width80pc" style="height: 60px">
+    <!-- Placeholder -->
+  </ion-card>
+</ion-content>
+<div class="absolute-positioned content-padding">
+  <form class="space-between-flex">
+    <mat-form-field class="width85pc">
+      <input matInput class="message-content">
+    </mat-form-field>
+    <button mat-button color="primary" (click)='sendMessage()' class="btn-msg-send">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,48 @@
+.add-member-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95%;
+    overflow: auto;
+}
+
+.width80pc {
+    width: 80%;
+}
+
+.width49pc {
+    width: 49%;
+}
+
+.width20pc {
+    width: 20%;
+}
+
+.width300px {
+    width: 300px;
+}
+
+.space-between-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.gender-radio {
+    display: inline-block;
+}
+
+.gender-radio.male {
+    margin-right: 25px;
+}
+
+.gender-radio.female {
+    margin-left: 25px;
+}
+.profile-pic{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    display: -webkit-inline-flex;
+}

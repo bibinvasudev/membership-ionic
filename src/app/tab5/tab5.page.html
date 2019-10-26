@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar class="app-color">
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="start" name="log-out"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <profiledetail [member-data]='member' [show-submit-button]=true [allow-edit]=true></profiledetail>
+</ion-content>

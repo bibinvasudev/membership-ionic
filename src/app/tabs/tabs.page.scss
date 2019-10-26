@@ -1,0 +1,29 @@
+.profile-settings {
+    padding: 7px 15px;
+    background: transparent;
+}
+
+.width100pc {
+    width: 100%;
+}
+
+.gender-radio {
+    display: inline-block;
+}
+
+.gender-radio.male {
+    margin-right: 10px;
+}
+
+.gender-radio.female {
+    margin-left: 10px;
+}
+
+.grey-color {
+    color: grey;
+    margin-right: 30px
+}
+
+.selected-red {
+    --color-selected: #e40046;
+}

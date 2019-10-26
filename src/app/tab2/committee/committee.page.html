@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar class="app-color">
+        <ion-title slot="start">{{committee?.title}}</ion-title>
+        <ion-title slot="end" class="level-title">{{committee?.level_title}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button class="app-color-variables-reverse" (click)="showEditCommitteePage()">
+                Edit
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card *ngFor='let member of committeeMembers$ | async'>
+        <ion-card-header>
+            <ion-card-title>{{member.name.first + ' ' + member.name.last}}</ion-card-title>
+            <ion-card-subtitle><span *ngIf='member.is_admin' class="admin-label">{{'Admin'}}</span> {{'9037676767'}}</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
+    <ion-fab (click)="showCommitteeAddMemberPage()" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button class="app-color-variables">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

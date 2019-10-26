@@ -1,0 +1,21 @@
+<ion-content>
+  <form class="login-form" (ngSubmit)='loginUser()'>
+    <img style="height: 5rem; margin-bottom: 30px" src=".\assets\index.png" alt="logo">
+    <mat-form-field class="width80pc">
+      <input matInput type="tel" placeholder="Mobile number" [(ngModel)]="user.mobile_no" name="user.mobile_no">
+    </mat-form-field>
+
+    <mat-form-field class="width80pc">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="user.dob" name="user.dob"
+        placeholder="Date of birth">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button class="app-color" type="submit">Login</button>
+      <button mat-button  color="accent" type="button">I don't have account</button>
+    </div>
+  </form>
+  <p>{{debugvar | json}}</p>
+</ion-content>
